@@ -11,13 +11,13 @@ import ForgotPassword from './Components/ForgotPassword';
 import Otp from './Components/Otp';
 import NewPassword from './Components/NewPassword';
 import Events from './Components/Events';
-import Jobs from './Components/Jobs';
 import Contact from './Components/Contact';
 import Faq from './Components/Faq';
-import Greeks from './Components/Greeks';
+import Greeks from './Components/GreeksPage/Greeks';
 import Modal from './Components/HomePage/Modal';
 import EventsCalendar from './Components/EventsPage/EventsCalendar'
 import Interested from './Components/EventsPage/allTabs/Interested';
+import Jobs from './Components/JobsPage/Jobs';
 
 
 

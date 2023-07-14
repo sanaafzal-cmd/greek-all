@@ -11,7 +11,7 @@ export default function Jobs() {
         marginRight: '10px'
     }
   return (
-    <div className='job-component mt-3 p-4'>
+    <div className='job-component mt-3 p-3'>
         <h3 className='job-title'>Sr. Social Media Marketing Intern (unpaid internship)</h3>
         <div className='d-flex'>
             <h4 className='job-org'>Google</h4>

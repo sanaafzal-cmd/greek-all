@@ -67,15 +67,39 @@ font-weight: 700;
 }
 .navbar-nav .nav-item .nav-link{
   color:var(--white) !important;
-  margin-right: 20px;
+  margin-right: 40px;
   font-size: 14px;
-
+}
+.navbar-nav .nav-item .nav-icons{
+  color:var(--white) !important;
+  margin-right: 40px;
+  font-size: 14px;
 }
 .navbar{
   background: linear-gradient(90deg, #4D2178 0%, #236B5F 100%);
-  box-shadow: 1px 2px 12px rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 2px 12px rgba(0, 0, 0, 0.1);
+  height: 70px !important;
 }
-
+.nav-sign-in{
+  width: 100px;
+  height: 40px;
+  background-color:#4D2178 ;
+  border: none;
+  color:#ffffff;
+  font-family: 'Lato', sans-serif;
+}
+.nav-signup{
+  width: 100px;
+  height: 40px;
+  background-color:#4D2178 ;
+  border: none;
+  color:#ffffff;
+  font-family: 'Lato', sans-serif;
+  margin-left: 10px;
+}
+.btn-dropdown{
+  color: #ffffff !important;
+}
 /* Login Page Styling */
 
 .login-form{
@@ -142,6 +166,12 @@ border-radius: 7px;
 font: normal normal normal 16px/19px Lato;
 letter-spacing: 0px;
 color: #8C8C8E;
+}
+@media screen and (max-width:768px) {
+  .input-style{
+    width: 400px !important;
+  }
+  
 }
 
 .or{
@@ -226,8 +256,8 @@ color: var(--white);
 
 /* OTP Verification Styling */
 .otp-input{
-  width: 75px;
-height: 55px;
+  width: 75px !important;
+height: 55px !important;
 background: #FFFFFF 0% 0% no-repeat padding-box;
 border: 1px solid #240047;
 border-radius: 7px;
@@ -262,7 +292,7 @@ line-height: 24px;
 color: #FFFFFF;
 }
 .btn-add-events{
-  width: 103px;
+  width: 140px;
 height: 33px;
 font-family: 'Lato';
 font-style: normal;
@@ -275,8 +305,22 @@ background: #226C5F;
 border-radius: 5px;
 letter-spacing: 1px;
 }
+.btn-add-jobs{
+  width: 100px;
+  height: 33px;
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+  color: #FFFFFF;
+  background: #226C5F;
+  border-radius: 5px;
+  letter-spacing: 1px;
+}
 
-.btn-add-events:hover{
+.btn-add-events:hover, .btn-add-jobs:hover{
   background: #226C5F;
 }
 .event-days h4{
@@ -289,9 +333,24 @@ line-height: 17px;
 color: #FFFFFF;
 
 }
+.active-day{
+  width: 103px;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.active-day.active{
+  background-color: #652D90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
 .event-cards{
   border-radius: 30px;
-  width: 226px;
+  width: 220px;
 height: max-content;
 background: #D9D9D9;
 border: none;
@@ -301,7 +360,7 @@ border: none;
 font-style: normal;
 font-weight: 400;
 font-size: 12px;
-line-height: 14px;
+ line-height: 14px; 
 color: #000000;
 opacity: 0.7;
 }
@@ -310,7 +369,7 @@ opacity: 0.7;
 font-style: normal;
 font-weight: 700;
 font-size: 12px;
-line-height: 14px;
+line-height: 20px; 
 color: #000000;
 }
 .event-cal-icons{
@@ -318,21 +377,26 @@ color: #000000;
 height: 18px;
 opacity: 0.7;
 margin-right: 5px;
+
 }
 .event-loc-icons{
   width: 28px;
 height: 28px;
 opacity: 0.7;
 margin-right: 5px;
+
 }
 .event-date, .event-location{
   font-family: 'Lato';
 font-style: normal;
 font-weight: 400;
 font-size: 12px;
-line-height: 14px;
+line-height: 4px;
 color: #000000;
 opacity: 0.7;
+}
+.event-date-icons, .event-location-icons{
+  font-size: 10px !important;
 }
 .br-bottom{
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
@@ -352,17 +416,21 @@ color: #FFFFFF;
  .carousel-control-prev,
  .carousel-control-next {
    width: 10%;
-   opacity: 1;
+   opacity: 0.7;
    z-index: 1;
    transform: translateX(0);
  }
+ .carousel-control-prev-icon, .carousel-control-next-icon {
+  width: 20px !important;
+  height: 20px !important;
+ }
  
  .carousel-control-prev {
-   left: -55px;
+   left: -35px;
  }
  
  .carousel-control-next {
-   right: -55px;
+   right: -35px;
  }
  @media (max-width: 575.98px) {
   .carousel-control-prev,
@@ -370,8 +438,37 @@ color: #FFFFFF;
     width: 15%;
   }
 }
-
+.selected-day{
+  width: 200px;
+  height: 44px;
+  background: #4D2178 0% 0% no-repeat padding-box;
+  border-radius: 7px;
+  border: none;
+  color: #FFF5F5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  
+}
+.selected-day:active{
+  width: 375px;
+  height: 54px;
+  background: #4D2178 0% 0% no-repeat padding-box;
+  border-radius: 7px;
+  border: none;
+  color: #FFF5F5;
+}
 /* Tweets Styling */
+.chatbox{
+  margin-top: -420px;
+}
+
+@media screen and (max-width:768px) {
+  .chatbox{
+    margin-top: 0;
+  }
+}
 .tweet {
   min-height: 68px;
   padding: 10px;
@@ -452,13 +549,10 @@ margin-left: 20px;
   height: 27px; 
   margin-left: 20px;
 }
-@media screen and (max-width:786px) {
+@media screen and (max-width:768px) {
   .comment-input{
-    width: 350px;
+    width: 350px !important;
   height: 27px;
-  background: #D9D9D9;
-  border-radius: 20px;
-  margin-left: 20px;
   }
   .comment-text{
     width: 350px;
@@ -498,7 +592,9 @@ border: 2px solid #ffffff;
 }
 @media screen and (max-width:786px){
   .comment-input-1{
-    width: 350px;
+    width: 350px !important;
+    margin-left: 15px;
+    height: 35px;
  
   }
 }
@@ -506,14 +602,14 @@ border: 2px solid #ffffff;
 /* Jobs Component Styling */
 .job-component{
   /* width: 380px; */
-  width: 300px;
+  width: 400px;
 height: max-content;
 background: #D9D9D9;
 border-radius: 20px;
 }
 @media screen and (max-width:786px){
   .job-component{
-    width: 380px;
+    width: 410px;
  
   }
 }
@@ -608,7 +704,7 @@ max-width: 600px !important;
   z-index: 2;
   color: #454343;
   position: absolute;
-  top: 10px;
+  top: 17px;
   left: 10px;
 }
 .fa-lock-icon{
@@ -635,4 +731,44 @@ max-width: 600px !important;
 }
 #event-description{
   padding-left: 35px;
+}
+
+/* Contact Page Styling */
+.contact-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+height: 90vh;
+}
+.contact-label{
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: 'Lato' , sans-serif;
+}
+/* FAQs page styling */
+.custom-accordion{
+  width: 800px;
+  height: 90vh;
+}
+@media screen and (max-width:768px) {
+  .custom-accordion{
+    width: 400px;
+    height: 90vh;
+  }
+}
+.faqs-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 3em;
+}
+/* Thumbnail Event Styling */
+.thumbnail-event{
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 20px;
+  width: 400px;
 }

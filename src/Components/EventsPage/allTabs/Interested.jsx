@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Calendar from "react-calendar";
+import EventComponent from './EventComponent';
 import "react-calendar/dist/Calendar.css";
 import '../styles.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,7 +12,6 @@ export default function Interested() {
   const styles = {
     fontFamily: 'Lato',
     fontSize: '1.5rem',
-    fontWeight: '900'
   }
   const allMonthValues = [
     "January",
@@ -55,7 +55,7 @@ export default function Interested() {
     <>
     <div className="container">
       <div className="row">
-        <div className="col p-3">
+        <div className="col-md-6 col-sm-12">
         <div className="calendar-container">
     <h2 className="calander-details" style={styles}>{calendarText}</h2>
     <Calendar className="custom-calendar"
@@ -66,12 +66,11 @@ export default function Interested() {
     />
   </div>
         </div>
-        <div className="col p-3 events-container">
-          Events
-          <div></div>
-          <div></div>
-          <div></div>
-          
+        <div className="col-md-6 col-sm-12">
+          <h2 className='mb-3 calendar-details'>Events</h2>
+          <EventComponent />
+          <EventComponent />
+          <EventComponent />
         </div>
       </div>
     </div>

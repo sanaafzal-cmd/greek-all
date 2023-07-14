@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Greeks() {
+export default function AddMore() {
   return (
     <div>
-      Greeks
+      Add More
     </div>
   )
 }

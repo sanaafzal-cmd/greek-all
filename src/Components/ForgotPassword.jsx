@@ -1,4 +1,5 @@
 import React from 'react'
+import { Outlet, Link } from "react-router-dom";
 
 export default function ForgotPassword() {
   return (
@@ -14,10 +15,10 @@ export default function ForgotPassword() {
              <input type="email" class="form-control input-style" id="exampleFormControlInput1" placeholder="Email Address" />
             </div>
           <div class="mb-3">
-           <button class="btn-signin">Sign Up</button>
+           <button class="btn-signin">Verify Code</button>
           </div>
 
-          <div className='align-self-center mt-4 mb-4 acc-pass'>Already have an account? <a href='#'>Login</a></div>
+          <div className='align-self-center mt-4 mb-4 acc-pass'>Already have an account? <Link to='/login' style={{color: '#4D2178'}}>Login</Link></div>
 
 
             </div>

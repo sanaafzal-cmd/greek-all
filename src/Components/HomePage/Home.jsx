@@ -7,9 +7,9 @@ import Tweet from './Tweet';
 import Jobs from './Jobs';
 import ProfilePhoto from '../../assets/profile-photo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { fa1, faBriefcase, faLock, faLockOpen, faPaperPlane, faAlignJustify, faParagraph , faCalendarDays } from '@fortawesome/free-solid-svg-icons';
+import { fa1, faBriefcase, faLock, faLockOpen, faPaperPlane, faAlignJustify, faParagraph , faCalendarDays, faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
-library.add(faPaperPlane, faLock, faLockOpen , faBriefcase, faAlignJustify, faParagraph, faCalendarDays);
+library.add(faPaperPlane, faLock, faLockOpen , faBriefcase, faAlignJustify, faParagraph, faCalendarDays, faCirclePlus);
 
 export default function Hero() {
   const styles={
@@ -30,8 +30,8 @@ export default function Hero() {
    
     <div className="container-fluid hero-container">
      <div className="container-fluid">
-     <div className="row">
-        <div className="col-md-8 col-sm-12 events-sec p-5 mt-5 ms-md-4 ms-sm-0">
+     <div className="row justify-content-center">
+        <div className="col-md-7 col-sm-12 events-sec p-3 mt-5 ms-md-2 ms-sm-0">
           <div className='d-flex justify-content-between br-bottom pb-3'>
             <h3 className='events-sec-heading'>Events</h3>
             <button className='btn btn-add-events' data-bs-target="#addNewEvent" data-bs-toggle="modal">Add Event</button>
@@ -116,7 +116,7 @@ export default function Hero() {
   <label for="event-description" class="form-label">Description</label>
   <div className='mb-3 position-relative'>
 <FontAwesomeIcon icon={faParagraph} className='fa-icons-style' />
-<textarea class="form-control" placeholder="Enter details of the job" id="event-description"></textarea>
+<textarea class="form-control" placeholder="Enter details of the job" id="event-description" style={{height:'100px'}}></textarea>
 </div>
 </div>
 <div className='text-center mb-3 mt-3'>
@@ -133,51 +133,57 @@ export default function Hero() {
 
           {/* Carousel Start */}
           <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active pt-3">
-      <div className='d-flex justify-content-around'>
-      <Events />
-     <Events />
-     <Events />
-     
-      </div>
-    </div>
-    <div class="carousel-item pt-3">
-    <div className='d-flex justify-content-around'>
-      <Events />
-     <Events />
-     <Events />
-    
-      </div>
-    </div>
-    <div class="carousel-item pt-3">
-    <div className='d-flex justify-content-around'>
-      <Events />
-     <Events />
-     <Events />
-    
-      </div>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+         
+         <div class="carousel-inner">
+           <div class="carousel-item active pt-3">
+             <div className='d-flex justify-content-evenly'>
+               
+             <Events />
+            <Events />
+            <Events />
+            
+             </div>
+           </div>
+           <div class="carousel-item pt-3">
+           <div className='d-flex justify-content-evenly'>
+             <Events />
+            <Events />
+            <Events />
+           
+             </div>
+           </div>
+           <div class="carousel-item pt-3">
+           <div className='d-flex justify-content-evenly'>
+             <Events />
+            <Events />
+            <Events />
+           
+             </div>
+           </div>
+         </div>
+         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+           <span class="visually-hidden">Previous</span>
+         </button>
+         <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+           <span class="carousel-control-next-icon" aria-hidden="true"></span>
+           <span class="visually-hidden">Next</span>
+         </button>
+       </div>
           {/* Carousel Ends */}
 
 
-          <div className='d-flex justify-content-between event-days pt-5 br-bottom pb-3'>
-            <h4>Monday</h4>
-            <h4>Tuesday</h4>
-            <h4>Wednesday</h4>
-            <h4>Thursday</h4>
-            <h4>Friday</h4>
-            <h4>Saturday</h4>
+          <div className='d-flex justify-content-evenly event-days pt-4 pb-3'>
+          <h4 className='active-day active'>Monday</h4>
+          <h4 className='active-day'>Tuesday</h4>
+          <h4 className='active-day'>Wednesday</h4>
+          <h4 className='active-day'>Thursday</h4>
+          <h4 className='active-day'>Friday</h4>
+          <h4 className='active-day'>Saturday</h4>
+          </div>
+
+          <div className='br-bottom'>
+
           </div>
 
           <div className='text-center mt-4'>
@@ -185,10 +191,11 @@ export default function Hero() {
           </div>
         </div>
         {/* Jobs Section Start */}
-        <div className="col-md-3 col-sm-12 events-sec p-5 mt-5 ms-md-5 ms-sm-0">
+     
+        <div className="col-md-4 col-sm-12 events-sec p-3 mt-5 ms-md-3 ms-sm-0">
         <div className='d-flex justify-content-between br-bottom pb-3'>
             <h3 className='events-sec-heading'>Jobs for you</h3>
-            <button className='btn btn-add-events' data-bs-target="#postNewJob" data-bs-toggle="modal">Post Job</button>
+            <button className='btn btn-add-jobs' data-bs-target="#postNewJob" data-bs-toggle="modal">Post Job</button>
             {/* Post Job Modal Start */}
                 {/* Modal  */}
 <div class="modal custom-modal fade" id="postNewJob" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -236,7 +243,7 @@ export default function Hero() {
 <label for="jobDescription" class="form-label">Description</label>
 <div className='mb-3 position-relative'>
 <FontAwesomeIcon icon={faParagraph} className='fa-icons-style' />
-<textarea class="form-control" placeholder="Enter details of the job" id="jobDescription"></textarea>
+<textarea class="form-control" placeholder="Enter details of the job" id="jobDescription" style={{height:'100px'}}></textarea>
 </div>
 </div>
 
@@ -256,14 +263,18 @@ export default function Hero() {
           <div className='d-flex flex-column align-items-center justify-content-center'>
             <Jobs />
             <Jobs />
+            <Jobs />
+            <Jobs />
           </div>
           <div className='text-center mt-4 mb-4'>
             <a className='view-events'>View all Jobs</a>
           </div>
 
         </div>
+        </div>
+     <div className='row chatbox'>
         {/* Jobs Section Ends */}
-        <div className="col-sm-12 col-md-8 events-sec p-3 ms-md-4 ms-sm-0">
+        <div className="col-sm-12 col-md-7 events-sec p-3 ms-md-5 ms-sm-0 mt-5">
         <div className='d-flex mt-2 mb-2'>
         <img
       src={ProfilePhoto}
@@ -281,7 +292,7 @@ export default function Hero() {
        </div>
           </div>
 
-        <div className="col-sm-12 col-md-8 events-sec p-3 mt-2 ms-md-4 ms-sm-0">
+        <div className="col-sm-12 col-md-7 events-sec p-3 mt-2 ms-md-5 ms-sm-0">
        <Tweet />
        <div className='d-flex flex-column justify-content-center align-items-center'>
        <div className='d-flex mt-3 mb-3'>
@@ -305,14 +316,15 @@ export default function Hero() {
 </div>
 </div>
         </div>
-        <div className="col-sm-12 col-md-8 events-sec p-3 mt-2 mb-5 ms-md-4 ms-sm-0">
+        <div className="col-sm-12 col-md-7 events-sec p-3 mt-2 mb-5 ms-md-5 ms-sm-0">
        <Tweet />
+        </div>
         </div>
       </div>
      </div>
 
     
-    </div>
+    
     
   
 

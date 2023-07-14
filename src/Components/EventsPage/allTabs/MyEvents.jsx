@@ -1,12 +1,12 @@
 import React, {useState} from 'react'
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+import EventComponent from './EventComponent';
 
 export default function MyEvents() {
   const styles = {
     fontFamily: 'Lato',
-    fontSize: '1.5rem',
-    fontWeight: '900'
+    fontSize: '1.5rem'
   }
   const allMonthValues = [
     "January",
@@ -51,7 +51,7 @@ export default function MyEvents() {
     <>
     <div className="container">
       <div className="row">
-        <div className="col p-3">
+        <div className="col">
         <div className="calendar-container">
     <h2 className="calander-details" style={styles}>{calendarText}</h2>
     <Calendar className="custom-calendar"
@@ -62,11 +62,11 @@ export default function MyEvents() {
     />
   </div>
         </div>
-        <div className="col p-3 events-container">
-          Events
-          <div></div>
-          <div></div>
-          <div></div>
+        <div className="col">
+        <h2 className='mb-3 calendar-details'>Events</h2>
+          <EventComponent />
+          <EventComponent />
+          <EventComponent />
           
         </div>
       </div>
