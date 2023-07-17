@@ -1,4 +1,6 @@
 import React from 'react'
+import calendarIcon from '../../assets/calendar-icon.png';
+import locationIcon from '../../assets/Location.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
@@ -24,6 +26,7 @@ export default function Jobs() {
         <div className='d-flex justify-content-between pt-3'>
             <div className='d-flex'>
             <FontAwesomeIcon icon={faMapMarkerAlt} style={iconColors} />
+           
                 <p className='job-location'>Dallas, Texas</p>
                 </div>
             <div className='d-flex'>

@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 body{
-    font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', sans-serif;
   }
 .events-calendar{
     background: linear-gradient(90deg, rgba(77, 33, 120, 0.9), rgba(34, 108, 95, 0.9)), url('../../assets/logo.png');

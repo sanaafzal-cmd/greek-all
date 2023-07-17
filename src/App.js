@@ -18,6 +18,7 @@ import Modal from './Components/HomePage/Modal';
 import EventsCalendar from './Components/EventsPage/EventsCalendar'
 import Interested from './Components/EventsPage/allTabs/Interested';
 import Jobs from './Components/JobsPage/Jobs';
+import { AuthProvider } from './Components/auth';
 
 
 
@@ -25,7 +26,7 @@ import Jobs from './Components/JobsPage/Jobs';
 
 function App() {
   return (
-   
+   <AuthProvider>
       <BrowserRouter>
       
 <Routes>
@@ -51,7 +52,7 @@ function App() {
   
 </Routes>
  </BrowserRouter>  
-    
+ </AuthProvider>
   );
 }
 

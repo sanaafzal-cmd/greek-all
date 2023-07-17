@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 body{
-    font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', sans-serif;
   }
 .events-calendar{
     background: linear-gradient(90deg, rgba(77, 33, 120, 0.9), rgba(34, 108, 95, 0.9)), url('../../assets/logo.png');
@@ -18,8 +18,8 @@ body{
     /* min-height: 400px; */
     background: rgba(141, 95, 186, 0.6);
     /* margin: 3.5rem auto 1.5rem; */
-   
-    padding: 2rem 2rem;
+  
+    /* padding: 2rem 2rem; */
     color: #E8F0F2;
     border-radius: 1.5rem;
     @media (max-width: 769px) {
@@ -28,20 +28,21 @@ body{
    }
    /* Tab Navigation */
   ul.nav {
-    width: 70%;
+    width: 80%;
     margin: 0 auto 2rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    border: 1px solid #240047;
+     justify-content: center; 
+    border: 1px solid #240047; 
     border-radius: 2rem;
     padding-left: 0px;
+    padding-right: 0px;
     @media (max-width: 768px) {
       width: 90%;
     }
   }
   ul.nav li {
-    width: 30%;
+    width: 33.33%;
     padding: 1rem;
     list-style: none;
     text-align: center;
@@ -51,6 +52,11 @@ body{
     border-top-left-radius: 2rem;
     margin: 0;
     font-weight: 900;
+  }
+  ul.nav li:nth-child(1) {
+    border-radius: 0;
+    border-bottom-left-radius: 2rem;
+    border-top-left-radius: 2rem;
   }
   ul.nav li:nth-child(2) {
     border-radius: 0;
@@ -70,7 +76,8 @@ body{
   }
   /* First and Second Tab Styles */
   .FirstTab p,
-  .SecondTab p {
+  .SecondTab p,
+  .ThirdTab p {
     font-size: 2rem;
     text-align: center;
   }
@@ -100,7 +107,7 @@ body{
 }
 @media screen and (max-width:786px) {
   .custom-calendar {
-    width: 800px;
+    width: 900px;
   }
   .calendar-container{
     gap:10px;
@@ -117,7 +124,6 @@ body{
 }
 .react-calendar__navigation__label {
   font-weight: bold;
-  font-family: 'Lato', sans-serif;
 }
 
 /* Example: Customize the calendar days */
@@ -129,21 +135,17 @@ body{
 .react-calendar__month-view__weekdays {
   color: #000000;
   text-align: center;
-  font-family: 'Lato', sans-serif;
 }
 .events-container{
-  font-family: 'Lato', sans-serif;
   font-size: 1.5rem;
   font-weight: 900;
 }
 .calendar-details{
-  font-family: 'Lato', sans-serif;
   font-size: 1.5rem;
 }
 .btn-ae{
   width: 140px;
 height: 40px;
-font-family: 'Lato';
 font-style: normal;
 font-weight: 700;
 font-size: 14px;
@@ -164,4 +166,11 @@ float: right;
   border: 1px solid #ffffff;
   margin-bottom: 20px;
   margin-top:20px;
+}
+/* Thumbnail Event Styling */
+.thumbnail-event{
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 20px;
+  width: 400px;
 }

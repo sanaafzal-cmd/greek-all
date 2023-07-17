@@ -43,7 +43,7 @@ export default function Jobs() {
        
         <div className="outlet">
             <div style={{float:'right', paddingRight:'50px'}}>
-            <button className='btn btn-add-events' data-bs-target="#filterJob" data-bs-toggle="modal">Filter Jobs<FontAwesomeIcon icon={faFilter} className='px-1' /></button>
+            <button className='btn btn-add-events' data-bs-target="#filterJob" data-bs-toggle="modal">Filter Jobs</button>
             </div>
             {event}
          {/* {activeTab === "tab1" ? <Interested /> : <MyEvents />} 

@@ -1,9 +1,13 @@
 import React from 'react'
-import { Outlet, Link, useLocation } from "react-router-dom";
+import { Outlet, Link, useLocation, NavLink } from "react-router-dom";
 import Logo from '../assets/Vector (2).png';
 import logoText from '../assets/Vector (1).png'
 import profilePhoto from '../assets/profile-photo.png'
-import homeIcon from '../assets/home.png'
+import homeIcon from '../assets/home-icon.png'
+import jobsIcon from '../assets/jobs-icon.png'
+import eventsIcon from '../assets/events-icon.png'
+import greeksIcon from '../assets/greeks-icon.png'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse, faBriefcase, faUsers, faCalendarDays } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -11,6 +15,28 @@ library.add(faHouse, faBriefcase,faUsers,faCalendarDays);
 
 export default function Layout() {
   const location = useLocation();
+
+  const navLinkStyle = {
+    marginRight: '100px' // Adjust the spacing value as needed
+  };
+
+  const imgSize = {
+    width: '25.95px',
+    height: '22.81px'
+  }
+
+  const navLinkStyles = ({isActive}) => {
+    return {
+      color : isActive ? '#AC57FF' : '#ffffff',
+      textDecoration : isActive ? 'none' : 'none',
+      fontWeight: isActive ? '600' : 'normal',
+      fontSize: '14px',
+      borderBottom: isActive ? '2px solid #AC57FF' : 'none'
+      
+    }
+  }
+
+   
   return (
     <>
     <nav class="navbar navbar-expand-lg">
@@ -23,22 +49,26 @@ export default function Layout() {
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item d-flex flex-column align-items-center justify-content-center">
-        <FontAwesomeIcon icon={faHouse} className='nav-icons' />
-          <Link class="nav-link active" aria-current="page" to="/">Home</Link>
+        <li class="nav-item d-flex flex-column align-items-center justify-content-center" style={navLinkStyle}>
+        {/* <FontAwesomeIcon icon={faHouse} className='nav-icons' /> */}
+        <img src={homeIcon} width={25.95} height={22.81} />
+          <NavLink style={navLinkStyles} class="nav-link" aria-current="page" to="/">Home</NavLink>
          
         </li>
-        <li class="nav-item d-flex flex-column align-items-center justify-content-center">
-        <FontAwesomeIcon icon={faBriefcase} className='nav-icons' />
-          <Link class="nav-link" to="/jobs">Jobs</Link>
+        <li class="nav-item d-flex flex-column align-items-center justify-content-center" style={navLinkStyle}>
+        {/* <FontAwesomeIcon icon={faBriefcase} className='nav-icons' /> */}
+        <img src={jobsIcon} width={25.95} height={22.81} />
+          <NavLink style={navLinkStyles} class="nav-link" to="/jobs">Jobs</NavLink>
         </li>
-        <li class="nav-item d-flex flex-column align-items-center justify-content-center">
-        <FontAwesomeIcon icon={faCalendarDays} className='nav-icons' />
-          <Link class="nav-link" to="/events">Events</Link>
+        <li class="nav-item d-flex flex-column align-items-center justify-content-center" style={navLinkStyle}>
+        {/* <FontAwesomeIcon icon={faCalendarDays} className='nav-icons' /> */}
+        <img src={eventsIcon} width={25.95} height={22.81} />
+          <NavLink style={navLinkStyles} class="nav-link" to="/events">Events</NavLink>
         </li>
-        <li class="nav-item d-flex flex-column align-items-center justify-content-center">
-        <FontAwesomeIcon icon={faUsers} className='nav-icons' />
-          <Link class="nav-link" to="/greeks">Greeks</Link>
+        <li class="nav-item d-flex flex-column align-items-center justify-content-center" style={navLinkStyle}>
+        {/* <FontAwesomeIcon icon={faUsers} className='nav-icons' /> */}
+        <img src={greeksIcon} width={25.95} height={22.81} />
+          <NavLink style={navLinkStyles} class="nav-link" to="/greeks">Greeks</NavLink>
         </li>
        
         <li>
@@ -47,8 +77,8 @@ export default function Layout() {
   <img src={profilePhoto} style={{border: '1px solid #ffffff', borderRadius: '50%'}} height={40} width={40} />
   </button>
   <ul class="dropdown-menu">
-    <li><Link class="dropdown-item" to="/contact">Contact Us</Link></li>
-    <li><Link class="dropdown-item" to="/faqs">FAQs</Link></li>
+    <li><NavLink class="dropdown-item" to="/contact">Contact Us</NavLink></li>
+    <li><NavLink class="dropdown-item" to="/faqs">FAQs</NavLink></li>
     <li><hr class="dropdown-divider" /></li>
     <li><a class="dropdown-item" href="#">Logout</a></li>
 

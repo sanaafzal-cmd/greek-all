@@ -19,8 +19,7 @@ export default function EventComponent() {
 
     const imageStyling = {
         width: '100px',
-        height: '100px',
-        color:'#8b8a8f'
+        height: '100px'
     }
     const iconStyling = {
       color:'#8b8a8f'

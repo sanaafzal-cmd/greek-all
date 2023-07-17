@@ -55,7 +55,7 @@ export default function Interested() {
     <>
     <div className="container">
       <div className="row">
-        <div className="col-md-6 col-sm-12">
+        <div className="col-md-6 col-sm-12 d-flex flex-column align-items-center justify-content-center">
         <div className="calendar-container">
     <h2 className="calander-details" style={styles}>{calendarText}</h2>
     <Calendar className="custom-calendar"
@@ -66,8 +66,8 @@ export default function Interested() {
     />
   </div>
         </div>
-        <div className="col-md-6 col-sm-12">
-          <h2 className='mb-3 calendar-details'>Events</h2>
+        <div className="col-md-6 col-sm-12 d-flex flex-column align-items-center justify-content-center mt-3">
+          {/* <h2 className='mb-3 calendar-details'>Events</h2> */}
           <EventComponent />
           <EventComponent />
           <EventComponent />

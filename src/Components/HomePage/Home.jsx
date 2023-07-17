@@ -266,6 +266,8 @@ export default function Hero() {
             <Jobs />
             <Jobs />
           </div>
+          <div className='br-bottom pt-5'>
+          </div>
           <div className='text-center mt-4 mb-4'>
             <a className='view-events'>View all Jobs</a>
           </div>
