@@ -1,6 +1,6 @@
 import React from 'react'
 import { Outlet, Link, useLocation, NavLink } from "react-router-dom";
-import Logo from '../assets/Vector (2).png';
+import Logo from '../assets/Asset 1@2x.png';
 import logoText from '../assets/Vector (1).png'
 import profilePhoto from '../assets/profile-photo.png'
 import homeIcon from '../assets/home-icon.png'
@@ -67,7 +67,7 @@ export default function Layout() {
         </li>
         <li class="nav-item d-flex flex-column align-items-center justify-content-center" style={navLinkStyle}>
         {/* <FontAwesomeIcon icon={faUsers} className='nav-icons' /> */}
-        <img src={greeksIcon} width={25.95} height={22.81} />
+        <img src={greeksIcon} width={33.95} height={22.81} />
           <NavLink style={navLinkStyles} class="nav-link" to="/greeks">Greeks</NavLink>
         </li>
        

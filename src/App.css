@@ -103,7 +103,7 @@ font-weight: 700;
 
 .login-form{
   /* background: transparent linear-gradient(90deg, #000000 0%, #56A496 52%, #861972 100%) 0% 0% no-repeat padding-box; */
-  background: linear-gradient(90deg, rgba(77, 33, 120, 0.9), rgba(34, 108, 95, 0.9)), url('./assets/logo.png');
+  background: linear-gradient(90deg, rgba(77, 33, 120, 0.9), rgba(34, 108, 95, 0.9)), url('./assets/background-logo.png');
   background-size: auto; /* or contain, 100% 100%, or auto */
   background-position: center center;
   background-repeat: no-repeat;
@@ -199,7 +199,7 @@ border-radius: 7px;
 
 .signup-form{
   /* background: transparent linear-gradient(90deg, #000000 0%, #56A496 52%, #861972 100%) 0% 0% no-repeat padding-box; */
-  background: linear-gradient(90deg, rgba(77, 33, 120, 0.9), rgba(34, 108, 95, 0.9)), url('./assets/logo.png');
+  background: linear-gradient(90deg, rgba(77, 33, 120, 0.9), rgba(34, 108, 95, 0.9)), url('./assets/background-logo.png');
   background-size: auto; /* or contain, 100% 100%, or auto */
   background-position: center center;
   background-repeat: no-repeat;
@@ -267,7 +267,7 @@ font-size: 1.5rem;
 
 /* Home page styling */
 .hero-container{
-  background: linear-gradient(90deg, rgba(77, 33, 120, 0.9), rgba(34, 108, 95, 0.9)), url('./assets/logo.png');
+  background: linear-gradient(90deg, rgba(77, 33, 120, 0.9), rgba(34, 108, 95, 0.9)), url('./assets/background-logo.png');
   background-size: auto; /* or contain, 100% 100%, or auto */
   background-position: center center;
   background-repeat: no-repeat;
@@ -338,18 +338,23 @@ color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
+  background-color: #652D90;
+  color: #ffffff;
+  border-radius: 5px;
   
 }
-.active-day.active{
-  background-color: #652D90;
+.non-active-day{
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 5px;
+  color: #ffffff;
+  border: none;
 }
 .event-cards{
   border-radius: 30px;
-  width: 220px;
+  width: 230px;
 height: max-content;
 background: #D9D9D9;
 border: none;
@@ -428,11 +433,11 @@ color: #FFFFFF;
  }
  
  .carousel-control-prev {
-   left: -35px;
+   left: -38px;
  }
  
  .carousel-control-next {
-   right: -35px;
+   right: -38px;
  }
  @media (max-width: 575.98px) {
   .carousel-control-prev,

@@ -24,6 +24,24 @@ export default function Hero() {
       const selectedImagesArray = Array.from(files);
       setSelectedImages(selectedImagesArray);
     }
+  
+      const [activeDiv, setActiveDiv] = useState(1);
+    
+      const handleButtonClick = (divNumber) => {
+        setActiveDiv(divNumber);
+      };
+
+      const navDayStyles = ({isActive}) => {
+        return {
+          color : isActive ? '#AC57FF' : '#ffffff',
+          textDecoration : isActive ? 'none' : 'none',
+          fontWeight: isActive ? '600' : 'normal',
+          fontSize: '14px',
+          borderBottom: isActive ? '2px solid #AC57FF' : 'none'
+          
+        }
+      }
+    
  
   return (
     <>
@@ -135,15 +153,15 @@ export default function Hero() {
           <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
          
          <div class="carousel-inner">
+        
            <div class="carousel-item active pt-3">
              <div className='d-flex justify-content-evenly'>
-               
              <Events />
             <Events />
             <Events />
-            
              </div>
            </div>
+          
            <div class="carousel-item pt-3">
            <div className='d-flex justify-content-evenly'>
              <Events />
@@ -152,6 +170,34 @@ export default function Hero() {
            
              </div>
            </div>
+          
+           <div class="carousel-item pt-3">
+           <div className='d-flex justify-content-evenly'>
+             <Events />
+            <Events />
+            <Events />
+           
+             </div>
+           </div>
+        
+           <div class="carousel-item pt-3">
+           <div className='d-flex justify-content-evenly'>
+             <Events />
+            <Events />
+            <Events />
+           
+             </div>
+           </div>
+         
+           <div class="carousel-item pt-3">
+           <div className='d-flex justify-content-evenly'>
+             <Events />
+            <Events />
+            <Events />
+           
+             </div>
+           </div>
+          
            <div class="carousel-item pt-3">
            <div className='d-flex justify-content-evenly'>
              <Events />
@@ -174,12 +220,18 @@ export default function Hero() {
 
 
           <div className='d-flex justify-content-evenly event-days pt-4 pb-3'>
-          <h4 className='active-day active'>Monday</h4>
+          <button onClick={() => handleButtonClick(1)} className={activeDiv === 1 ? 'active-day' : 'non-active-day'}>Monday</button>
+        <button onClick={() => handleButtonClick(2)} className={activeDiv === 2 ? 'active-day' : 'non-active-day'}>Tuesday</button>
+        <button onClick={() => handleButtonClick(3)} className={activeDiv === 3 ? 'active-day' : 'non-active-day'}>Wednesday</button>
+        <button onClick={() => handleButtonClick(4)} className={activeDiv === 4 ? 'active-day' : 'non-active-day'}>Thursday</button>
+        <button onClick={() => handleButtonClick(5)} className={activeDiv === 5 ? 'active-day' : 'non-active-day'}>Friday</button>
+        <button onClick={() => handleButtonClick(6)} className={activeDiv === 6 ? 'active-day' : 'non-active-day'}>Saturday</button>
+          {/* <h4 className='active-day active'>Monday</h4>
           <h4 className='active-day'>Tuesday</h4>
           <h4 className='active-day'>Wednesday</h4>
           <h4 className='active-day'>Thursday</h4>
           <h4 className='active-day'>Friday</h4>
-          <h4 className='active-day'>Saturday</h4>
+          <h4 className='active-day'>Saturday</h4> */}
           </div>
 
           <div className='br-bottom'>
@@ -187,7 +239,7 @@ export default function Hero() {
           </div>
 
           <div className='text-center mt-4'>
-            <a className='view-events'>View all Events</a>
+            <a className='view-events' href='#'>View all Events</a>
           </div>
         </div>
         {/* Jobs Section Start */}
@@ -269,7 +321,7 @@ export default function Hero() {
           <div className='br-bottom pt-5'>
           </div>
           <div className='text-center mt-4 mb-4'>
-            <a className='view-events'>View all Jobs</a>
+            <a className='view-events' href='#'>View all Jobs</a>
           </div>
 
         </div>
@@ -336,7 +388,3 @@ export default function Hero() {
   )
 }
 
-{/* <div class="image-container">
-<div class="gradient"></div>
-<img src={myImage} alt="Your Image" class="background-image" />
-</div> */}
