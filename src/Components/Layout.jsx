@@ -39,11 +39,11 @@ export default function Layout() {
    
   return (
     <>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg sticky-top">
   <div class="container">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand d-flex align-items-center justify-content-center" href="#">
     <img src={Logo} alt="Logo" width="52" height="52" class="d-inline-block align-text-center m-2" />
-      <img src={logoText} /></a>
+      <div style={{color:'#ffffff', fontSize:'20px', letterSpacing:'1px'}}>GreekAll</div></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
