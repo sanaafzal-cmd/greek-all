@@ -35,27 +35,28 @@ if (localStorage.getItem('user-info')){
 
   async function login(){
     let item = {email,  password}
-    console.warn(item);
+  
 
     var myHeaders = new Headers();
 myHeaders.append("Authorization", "Bearer s%3AeyJtZXNzYWdlIjoiY2xpbG1qOHBjMDAzaW93b2oydnoyNW9icCIsInB1cnBvc2UiOiJhZG9uaXMtc2Vzc2lvbiJ9.nKzx3iDVlid8SyL7992-eaOBBRFkzXjFPlmAzqvjETA; clilmj8pc003iowoj2vz25obp=e%3AOVfmQLFgHXEsLo1i4Gum7BMVjRrsRQ7rhwvp1VB_3l83YpeSyuWiC8U5cu82RRKVaBPgnL_NefgWiBF_ZMMWpw.aGFqMHJnOUZSV1lyWXNCXw.1oOEHsiKcZfI5kwuPIbty_xpmkgEnXCoUk9LN8smqsM");
-myHeaders.append("Cookie", "adonis-session=s%3AeyJtZXNzYWdlIjoiY2xrMTB0OGQwMDB3bm93b2pnMjd2NmJmcSIsInB1cnBvc2UiOiJhZG9uaXMtc2Vzc2lvbiJ9.L8UHsaNqGCyW3IwR4Y02DxDg2VEgsl5VdyjVB4UQwSU; clk10t8d000wnowojg27v6bfq=e%3AnrM-k5Mmg47Fy1NdUnA_FF4F8OUuyQbL0xAIeY8qKKseNknCSVgKUmdc47gZwm90ix5j9r_9UPJ3gtCb2FnIKg.OHlEQS1Ecng0ODNqczh6VA.emw-zOk8QcQBaEAZ67eCjssfmjB0NiOSrHQtRQ5INe8");
+// myHeaders.append("Cookie", "adonis-session=s%3AeyJtZXNzYWdlIjoiY2xrMTB0OGQwMDB3bm93b2pnMjd2NmJmcSIsInB1cnBvc2UiOiJhZG9uaXMtc2Vzc2lvbiJ9.L8UHsaNqGCyW3IwR4Y02DxDg2VEgsl5VdyjVB4UQwSU; clk10t8d000wnowojg27v6bfq=e%3AnrM-k5Mmg47Fy1NdUnA_FF4F8OUuyQbL0xAIeY8qKKseNknCSVgKUmdc47gZwm90ix5j9r_9UPJ3gtCb2FnIKg.OHlEQS1Ecng0ODNqczh6VA.emw-zOk8QcQBaEAZ67eCjssfmjB0NiOSrHQtRQ5INe8");
 
 var formdata = new FormData();
 formdata.append("email", email);
 formdata.append("password", password);
-formdata.append("device_type", "android");
+formdata.append("device_type", "ios");
 formdata.append("device_token", "test");
 
 var requestOptions = {
   method: 'POST',
   headers: myHeaders,
   body: formdata,
-  redirect: 'follow'
+  redirect: 'follow',
+
 };
 
 fetch("https://greekall.tekstagearea.com/api/v1/login", requestOptions)
-  .then(response => response.text())
+  .then(response =>JSON.stringify(response)) 
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
 
