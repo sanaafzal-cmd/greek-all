@@ -5,6 +5,12 @@ import locationIcon from '../../assets/location-icon.png';
 import Events from './Events';
 import Tweet from './Tweet';
 import Jobs from './Jobs';
+import MondayEvents from './MondayEvents';
+import TuesdayEvents from './TuesdayEvents';
+import WedEvents from './WedEvents';
+import ThursdayEvents from './ThursdayEvents';
+import FridayEvents from './FridayEvents';
+import SatEvents from './SatEvents';
 import ProfilePhoto from '../../assets/profile-photo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { fa1, faBriefcase, faLock, faLockOpen, faPaperPlane, faAlignJustify, faParagraph , faCalendarDays, faCirclePlus } from '@fortawesome/free-solid-svg-icons';
@@ -150,7 +156,7 @@ export default function Hero() {
           </div>
 
           {/* Carousel Start */}
-          <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+          {/* <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
          
          <div class="carousel-inner">
         
@@ -215,8 +221,30 @@ export default function Hero() {
            <span class="carousel-control-next-icon" aria-hidden="true"></span>
            <span class="visually-hidden">Next</span>
          </button>
-       </div>
+       </div> */}
           {/* Carousel Ends */}
+
+          {/* Carousel Start */}
+          {
+            activeDiv === 1 && <MondayEvents />
+          }
+           {
+            activeDiv === 2 && <TuesdayEvents />
+          }
+           {
+            activeDiv === 3 && <WedEvents />
+          }
+           {
+            activeDiv === 4 && <ThursdayEvents />
+          }
+           {
+            activeDiv === 5 && <FridayEvents />
+          }
+          {
+            activeDiv === 6 && <SatEvents />
+          }
+
+           {/* Carousel Ends */}
 
 
           <div className='d-flex justify-content-evenly event-days pt-4 pb-3'>
@@ -314,9 +342,7 @@ export default function Hero() {
           </div>
           <div className='d-flex flex-column align-items-center justify-content-center'>
             <Jobs />
-            <Jobs />
-            <Jobs />
-            <Jobs />
+           
           </div>
           <div className='br-bottom pt-5'>
           </div>
