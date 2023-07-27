@@ -27,7 +27,7 @@ export default function Jobs() {
   return (
     <div>
       {
-        data.map((job)=> {
+        jobsData.map((job)=> {
           return (
             <div key={job.id} class='job-component mt-2 p-3'>
                <h3 className='job-title'>{job.jobTitle}</h3>

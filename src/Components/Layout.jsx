@@ -14,7 +14,9 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 library.add(faHouse, faBriefcase,faUsers,faCalendarDays);
 
 export default function Layout() {
-  const location = useLocation();
+
+  
+  
 
   const navLinkStyle = {
     marginRight: '100px' // Adjust the spacing value as needed

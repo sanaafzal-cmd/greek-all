@@ -55,8 +55,10 @@ var requestOptions = {
 
 };
 
-fetch("https://greekall.tekstagearea.com/api/v1/login", requestOptions)
-  .then(response =>JSON.stringify(response)) 
+// https://greekall.tekstagearea.com/api/v1/login
+
+fetch("https://app.greek-all.com/api/v1/login", requestOptions)
+  .then(response =>response.text()) 
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
 

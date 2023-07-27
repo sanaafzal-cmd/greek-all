@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation} from "react-router-dom";
 import Home from './Components/HomePage/Home';
 import Login from './Components/Login';
 import Signup from './Components/Signup';
@@ -25,6 +25,7 @@ import { AuthProvider } from './Components/auth';
 
 
 function App() {
+ 
   return (
    <AuthProvider>
       <BrowserRouter>
