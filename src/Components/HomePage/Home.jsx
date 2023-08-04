@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState} from 'react'
+import {Link} from 'react-router-dom'
 import eventImage from '../../assets/event-image.png';
 import calendarIcon from '../../assets/calendar-icon.png';
 import locationIcon from '../../assets/location-icon.png';
@@ -267,7 +268,7 @@ export default function Hero() {
           </div>
 
           <div className='text-center mt-4'>
-            <a className='view-events' href='#'>View all Events</a>
+            <Link className='view-events' to='/events'>View all Events</Link>
           </div>
         </div>
         {/* Jobs Section Start */}
@@ -347,7 +348,7 @@ export default function Hero() {
           <div className='br-bottom pt-5'>
           </div>
           <div className='text-center mt-4 mb-4'>
-            <a className='view-events' href='#'>View all Jobs</a>
+            <Link className='view-events' to='/jobs'>View all Jobs</Link>
           </div>
 
         </div>

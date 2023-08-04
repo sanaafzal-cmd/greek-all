@@ -19,6 +19,8 @@ import EventsCalendar from './Components/EventsPage/EventsCalendar'
 import Interested from './Components/EventsPage/allTabs/Interested';
 import Jobs from './Components/JobsPage/Jobs';
 import { AuthProvider } from './Components/auth';
+// import dotenv from 'dotenv'
+// // dotenv.config({path: '/.env'});
 
 
 

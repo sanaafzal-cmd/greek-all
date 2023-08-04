@@ -99,6 +99,11 @@ font-weight: 700;
 .btn-dropdown{
   color: #ffffff !important;
 }
+.loggedin-username{
+ color: #ffffff;
+ padding-top: 15px;
+ font-size: 12px;
+}
 /* Login Page Styling */
 
 .login-form{
@@ -659,6 +664,12 @@ font-size: 13px;
 line-height: 14px;
 color: #000000;
 opacity: 0.7;
+display: -webkit-box;
+-webkit-line-clamp: 3; /* Number of lines to show before adding ellipsis */
+-webkit-box-orient: vertical;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: pre-line; /* Preserve line breaks in the description */
 }
 .job-apply-btn{
   width: 61px;
@@ -775,3 +786,4 @@ height: 90vh;
   justify-content: center;
   padding-top: 3em;
 }
+

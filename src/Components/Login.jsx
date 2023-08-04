@@ -1,13 +1,12 @@
+
 import React, {useState, useEffect} from 'react'
 import { Outlet, Link } from "react-router-dom";
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-// import Button from 'react-bootstrap/Button';
-import Button from '@mui/material/Button';
-import GoogleIcon from '@mui/icons-material/Google';
+
 import myImage from '../assets/logo.png';
+import global from './global.json'
+
+
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -21,12 +20,15 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const navigate = useNavigate();
+  const [apiData, setApiData] = useState(null);
 
-  useEffect(() => {
-if (localStorage.getItem('user-info')){
-  navigate.push('/')
-}
-  })
+  
+
+//   useEffect(() => {
+// if (localStorage.getItem('user-info')){
+//   navigate('/')
+// }
+//   })
 
 
   const handleTogglePassword = () => {
@@ -37,37 +39,64 @@ if (localStorage.getItem('user-info')){
     let item = {email,  password}
   
 
-    var myHeaders = new Headers();
-myHeaders.append("Authorization", "Bearer s%3AeyJtZXNzYWdlIjoiY2xpbG1qOHBjMDAzaW93b2oydnoyNW9icCIsInB1cnBvc2UiOiJhZG9uaXMtc2Vzc2lvbiJ9.nKzx3iDVlid8SyL7992-eaOBBRFkzXjFPlmAzqvjETA; clilmj8pc003iowoj2vz25obp=e%3AOVfmQLFgHXEsLo1i4Gum7BMVjRrsRQ7rhwvp1VB_3l83YpeSyuWiC8U5cu82RRKVaBPgnL_NefgWiBF_ZMMWpw.aGFqMHJnOUZSV1lyWXNCXw.1oOEHsiKcZfI5kwuPIbty_xpmkgEnXCoUk9LN8smqsM");
-// myHeaders.append("Cookie", "adonis-session=s%3AeyJtZXNzYWdlIjoiY2xrMTB0OGQwMDB3bm93b2pnMjd2NmJmcSIsInB1cnBvc2UiOiJhZG9uaXMtc2Vzc2lvbiJ9.L8UHsaNqGCyW3IwR4Y02DxDg2VEgsl5VdyjVB4UQwSU; clk10t8d000wnowojg27v6bfq=e%3AnrM-k5Mmg47Fy1NdUnA_FF4F8OUuyQbL0xAIeY8qKKseNknCSVgKUmdc47gZwm90ix5j9r_9UPJ3gtCb2FnIKg.OHlEQS1Ecng0ODNqczh6VA.emw-zOk8QcQBaEAZ67eCjssfmjB0NiOSrHQtRQ5INe8");
+//     var myHeaders = new Headers();
+   
+// // myHeaders.append("Authorization", `Bearer ${global.TOKEN}`);
+// var formdata = new FormData();
+// formdata.append("email", email);
+// formdata.append("password", password);
+// formdata.append("device_type", "ios");
+// formdata.append("device_token", "test");
+
+
+
+// var requestOptions = {
+//   method: 'POST',
+//   headers: myHeaders,
+//   body: formdata,
+//   redirect: 'follow',
+
+// };
+
+// // https://greekall.tekstagearea.com/api/v1/login
+
+// fetch("https://app.greek-all.com/api/v1/login", requestOptions)
+//   .then(response => setApiData(response.text())) 
+//   .then(result => {
+//     // localStorage.setItem('user-info', JSON.stringify(result));
+//     // navigate('/');
+//     console.log(result)
+//   })
+//   .catch(error => console.log('error', error));
+
+//   }
+
+var myHeaders = new Headers();
+// myHeaders.append("Cookie", "adonis-session=s%3AeyJtZXNzYWdlIjoiY2xrcGdoOHp5MDA2Z2JkcW8ybWw5NzVjcCIsInB1cnBvc2UiOiJhZG9uaXMtc2Vzc2lvbiJ9.xp5CJGF71eR9fZzCozHBUXo3xsbPFCjD0WTC12e2Z40; clkpgh8zy006gbdqo2ml975cp=e%3AP57wazRzmCxJz-hLYI6qAuiypO8md8F_kL2mcqiaEbhrSwBUplJ9CMLA_8hFsZXfjVZ1--0jJ5BASocP6mnC3w.TGVlajBNekxuaHhGTlVHbg.BAXWsJVZ0CISNK4vuYWz0HZGil49VOtZSnIFg_x3I_0");
 
 var formdata = new FormData();
-formdata.append("email", email);
-formdata.append("password", password);
-formdata.append("device_type", "ios");
+formdata.append("email", "shahabhamdani@hotmail.com");
+formdata.append("password", "123456");
+formdata.append("device_type", "android");
 formdata.append("device_token", "test");
 
 var requestOptions = {
   method: 'POST',
   headers: myHeaders,
   body: formdata,
-  redirect: 'follow',
-
+  redirect: 'follow'
 };
 
-// https://greekall.tekstagearea.com/api/v1/login
-
 fetch("https://app.greek-all.com/api/v1/login", requestOptions)
-  .then(response =>response.text()) 
-  .then(result => console.log(result))
+  .then(response => response.text())
+  // .then(result => console.log(result))
+  .then(result => {
+       localStorage.setItem('user-info', JSON.stringify(result));
+     navigate('/');
+     console.log(result)
+     })
   .catch(error => console.log('error', error));
-
-
-
-
-    // localStorage.setItem('user-info', JSON.stringify(result))
-    // navigate.push('/')
-  }
+}
  
   return (
    <>
@@ -114,30 +143,4 @@ onClick={handleTogglePassword} className='eye-icon'
   )
 }
 
-{/* <div className="container-fluid login-form">
-<div className="row login-overlay">
-  <div className="col">
-   <div className='sign-heading'>Let's sign you in?</div>
-  <div className='sign-desc'>Enter your email address and password to login</div> 
-  <div class="mb-3">
-<input type="email" class="form-control email-input" id="exampleFormControlInput1" placeholder="Email Address" />
-</div>
-<div class="mb-3">
-<input type="password" class="form-control password-input" id="inputPassword2" placeholder="Password" />
-</div>
 
-<div class="mb-3">
-<button class="btn-signin mb-3">Sign In</button>
-</div>
-
-
-<div class="mb-3">
-<button class="btn-sign-google mb-3">Sign In With Google</button>
-</div>
-
-<div className='ml-auto'>Don't have an account? <a href='#'>Sign Up</a></div>
-    
-
-  </div>
-</div>
-</div> */}
