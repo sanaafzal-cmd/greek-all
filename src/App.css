@@ -786,4 +786,10 @@ height: 90vh;
   justify-content: center;
   padding-top: 3em;
 }
+.login-signup-btn{
+  background-color: #4D2178 !important;
+  color: #ffffff !important;
+
+  
+}
 

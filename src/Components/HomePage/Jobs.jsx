@@ -43,12 +43,12 @@ fetch("https://app.greek-all.com/api/v1/jobs/?job_by=20&limit_per_page=4", reque
   return (
     <div>
       {
-        fetchedData.map((job, index)=> {
+        jobsData.map((job, index)=> {
           return (
             <div key={index} class='job-component mt-2 p-3'>
-               <h3 className='job-title'>{job.title}</h3>
+               <h3 className='job-title'>{job.jobTitle}</h3>
     <div className='d-flex'>
-        <h4 className='job-org'>{job.employer}</h4>
+        <h4 className='job-org'>{job.jobCompany}</h4>
         <h4 className='job-posting-time'></h4>
     </div>
     <div className='job-description'>
@@ -63,7 +63,7 @@ fetch("https://app.greek-all.com/api/v1/jobs/?job_by=20&limit_per_page=4", reque
             </div>
         <div className='d-flex'>
         <FontAwesomeIcon icon={faBriefcase} style={iconColors} />
-        <p className='job-type'></p>
+        <p className='job-type'>{job.jobType}</p>
         </div>
         <button className='job-apply-btn'>Apply</button>
     </div>

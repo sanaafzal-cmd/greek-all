@@ -15,71 +15,16 @@ import {
   faBriefcase,
   faUsers,
   faCalendarDays,
+  faRightToBracket
 } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
-library.add(faHouse, faBriefcase, faUsers, faCalendarDays);
+library.add(faHouse, faBriefcase, faUsers, faCalendarDays, faRightToBracket);
 
 export default function Layout() {
-  const [fullName, setFullName] = useState(null);
-  const navigate = useNavigate();
-  useEffect(() => {
-    // Get the data from localStorage
-    const data = getUserInfoFromLocalStorage();
-
-    // Check if the data exists and access specific keys
-    const parsedData = JSON.parse(data);
-    setFullName(parsedData.data.user.full_name);
-
-      // Access specific values from the parsed data
-      
-      // const fullName = parsedData.data.user.full_name;
-      // console.log('Full Name:', fullName);
-  }, []);
-
-  const [logoutStatus, setLogoutStatus] = useState(null);
-
-  const handleLogout = () => {
-    var myHeaders = new Headers();
-    myHeaders.append(
-      "Authorization",
-      "Bearer Y2xrcGo2ZWxzMDA3MmJkcW9kazBwNGV3MQ.JGhqxCGbMfPsuSDhOHxXGevdwQ_4QJ53_cQXow_-9ieElWlT5UfC7KbMbt8F"
-    );
-
-    var formdata = new FormData();
-    formdata.append("device_token", "adas");
-
-    var requestOptions = {
-      method: 'POST',
-      headers: myHeaders,
-      body: formdata,
-      redirect: 'follow',
-    };
-
-    fetch("https://app.greek-all.com/api/v1/logout", requestOptions)
-      .then(response => {
-        if (response.ok) {
-          localStorage.clear();
-          setLogoutStatus("Logout successful!");
-          // Handle successful logout
-        } else {
-          setLogoutStatus("Logout failed."); // Handle failed logout
-        }
-        return response.text();
-      })
-      .then(result => {
-        console.log(result);
-        navigate('/login');
-      })
-      .catch(error => {
-        console.log('error', error);
-        setLogoutStatus("Logout failed."); // Handle fetch error
-      
-    })
-  };
  
 
   const navLinkStyle = {
-    marginRight: "100px", // Adjust the spacing value as needed
+    marginRight: "60px", // Adjust the spacing value as needed
   };
 
   const imgSize = {
@@ -183,6 +128,29 @@ export default function Layout() {
                   Greeks
                 </NavLink>
               </li>
+              <li
+                class="nav-item d-flex flex-column align-items-center justify-content-center"
+                style={navLinkStyle}
+              >
+                {/* <FontAwesomeIcon icon={faRightToBracket} className="nav-icons" /> */}
+                <NavLink class="btn login-signup-btn" to="/login">
+                  <button class='btn login-signup-btn'>Login</button>
+
+                 
+                </NavLink>
+              </li>
+              <li
+                class="nav-item d-flex flex-column align-items-center justify-content-center"
+                style={navLinkStyle}
+              >
+                {/* <FontAwesomeIcon icon={faRightToBracket} className="nav-icons" /> */}
+                <NavLink style={{color:'#4D2178', textDecoration:'none'}} class="btn login-signup-btn" to="/signup">
+                  <button class='btn login-signup-btn'> Sign Up</button>
+
+                 
+                </NavLink>
+              </li>
+            
 
               <li>
                 <div class="dropdown-center">
@@ -220,7 +188,7 @@ export default function Layout() {
                       <hr class="dropdown-divider" />
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#" onClick={handleLogout}>
+                      <a class="dropdown-item" href="#">
                         Logout
                       </a>
                     </li>
@@ -230,10 +198,8 @@ export default function Layout() {
                 </div>
                
               </li>
-              <li className="loggedin-username">
-              {fullName && <p>{fullName}</p>}
-              </li>
-              {logoutStatus && <p>{logoutStatus}</p>}
+             
+            
               
             </ul>
           </div>
