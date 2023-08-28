@@ -7,6 +7,7 @@
 }
 body{
   font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
 }
 
 
@@ -77,7 +78,7 @@ font-weight: 700;
 .navbar{
   background: linear-gradient(90deg, #4D2178 0%, #236B5F 100%);
   box-shadow: 1px 2px 12px rgba(0, 0, 0, 0.1);
-  height: 70px !important;
+
 }
 .nav-sign-in{
   width: 100px;
@@ -327,15 +328,20 @@ letter-spacing: 1px;
 .btn-add-events:hover, .btn-add-jobs:hover{
   background: #226C5F;
 }
-.event-days h4{
+.event-days button{
  
 font-style: normal;
-font-weight: 700;
-font-size: 14px;
+font-weight: 500;
+font-size: 18px;
 line-height: 17px;
 /* identical to box height */
 color: #FFFFFF;
-
+}
+@media screen and (max-width: 768px) {
+  .event-days button{
+    font-size: 12px;
+  }
+  
 }
 .active-day{
   width: 103px;
@@ -347,7 +353,6 @@ color: #FFFFFF;
   background-color: #652D90;
   color: #ffffff;
   border-radius: 5px;
-  
 }
 .non-active-day{
   background: transparent;
@@ -403,6 +408,11 @@ font-size: 12px;
 line-height: 4px;
 color: #000000;
 opacity: 0.7;
+}
+@media screen and (max-width:768px) {
+  .event-date, .event-location{
+    line-height: 12px;
+  }
 }
 .event-date-icon, .event-location-icon{
 font-size: 13px !important;
@@ -570,7 +580,7 @@ margin-left: 20px;
 }
 @media screen and (max-width:768px) {
   .comment-input{
-    width: 350px !important;
+    width: 320px !important;
   height: 27px;
   }
   .comment-text{
@@ -611,7 +621,7 @@ border: 2px solid #ffffff;
 }
 @media screen and (max-width:786px){
   .comment-input-1{
-    width: 350px !important;
+    width: 310px !important;
     margin-left: 15px;
     height: 35px;
  
@@ -628,7 +638,7 @@ border-radius: 20px;
 }
 @media screen and (max-width:786px){
   .job-component{
-    width: 410px;
+    width: 360px;
  
   }
 }
